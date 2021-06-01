@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name ="viewport" content="width-device-width,initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title>document</title>
+        <style>
+            body{
+                 background-color: indigo;
+            }
+            .ineerdiv{
+                 position:fixed;
+                 top: 50%;
+                 left: 50%;
+                 transform: translate(-50%,-50%);
+                 width: 256px;
+                 height:116px;
+            }
+            h1{
+                color: #fff;
+            }
+             </style>
+    </head>
+    <body>
+        <div class="ineerdiv">
+                <h1>I Am Thermometer<span id="temp" class="fa"></span></h1>
+        </div>
+        <script>
+            const tempload = () => {
+                let temp = document.getElementById('temp');
+                temp.innerHTML="&#xf2cb";
+
+             setTimeout(()=>{
+                 temp.innerHTML="&#xf2ca";
+                 temp.style.color= "yellow";
+             },1000);
+             setTimeout(()=>{
+                 temp.innerHTML="&#xf2c9";
+             },2000);
+             setTimeout(()=>{
+                 temp.innerHTML="&#xf2c8";
+             },3000);
+             setTimeout(()=>{
+                 temp.innerHTML="&#xf2c7";
+                 temp.style.color="red";
+             },4000);   
+             }
+            tempload();
+            setInterval(tempload,5000);
+        </script>
+    </body>
+</html>
